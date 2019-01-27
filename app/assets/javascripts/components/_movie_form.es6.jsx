@@ -3,10 +3,12 @@ class MovieForm extends React.Component {
     super(props);
     this.state = {
       title: props.movie.title,
-      content: props.movie.content
+      content: props.movie.content      
     };
+
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleContentChange = this.handleContentChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleTitleChange(e) {
@@ -15,6 +17,10 @@ class MovieForm extends React.Component {
 
   handleContentChange(e) {
     this.setState({ content: e.target.value });
+  }
+
+  handleChange(event) {    
+    this.setState({ name: e.target.value });
   }
 
   render() {
@@ -36,6 +42,14 @@ class MovieForm extends React.Component {
           onChange={this.handleContentChange}
         />
 
+        <label>category</label>
+        <select          
+          value={this.state.name}
+          onChange={this.handleChange}
+          options={this.state.name}
+        />       
+
+      
         <input type="submit" value="Submit" />
       </div>
     );
