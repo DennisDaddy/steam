@@ -1,0 +1,48 @@
+<% provide(:title, "Categories") %>
+
+<section class="container">
+<!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h3><b><%= @category.name %></b></h3><hr>
+        </div>
+    </div>
+    <!-- /.row -->
+	 
+<div class="row">
+   <div class="col-md-8">	    
+	   <div class="post_details">
+			<ul class="list cat-list">  
+			<% @movies.each do |movie| %>	
+			    <li>
+			    <h2><%= link_to movie.title, movie %></h2>
+			    <div class="entry-meta">
+			        <span><i>Posted: <%= time_ago_in_words(movie.created_at) %> ago.</i></span>
+			    </div>
+			    <p><%= truncate(movie.content, length: 100, escape: false,
+			    separator: '') { link_to ' Read More', movie_path(movie) } %></p>
+				</li>			  
+			<% end %>
+			</ul>
+			
+			<% if (@movies.empty?) %> 
+				<h4>Sorry, no movie found!</h4>  
+			<% end %> 
+			<br>
+		</div>	
+	</div>
+
+	<!-- Start col-sm-4 -->
+		<div class="col-sm-4 ">
+			<div class="blog_right_sidebar">				
+			<h4 class="widget_title">Categories</h4><hr>
+				<ul class="list cat-list">
+				<% Category.all.each do |category| %>
+                   <%= link_to  category.name, category, class: "btn btn-default" %>                    
+                <% end %>			
+			</ul>
+			</div>
+		</div>		
+		<!-- End col-sm-4 --> 
+</div>
+</section>

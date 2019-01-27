@@ -1,0 +1,12 @@
+<h3>All movies</h3>
+<% @movies.each do |movie| %>   
+    <h3> <%= link_to movie.title, movie %></h3>
+    
+    <% if current_user?(movie.user) %>          |
+          <%= link_to "delete", movie, method: :delete,
+                                      data: { confirm: "Are you sure?" }, class: "btn-danger" %> |
+          <%= link_to "Edit", edit_movie_path(movie), class: "btn-primary" %> |
+          <% end %>
+    <p><%= truncate(movie.content, length: 50, separator: ''){ link_to 'Read More', movie_path(movie) } %>  
+    </p>  
+<% end %>
