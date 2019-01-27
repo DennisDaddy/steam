@@ -1,10 +1,5 @@
 class StaticPagesController < ApplicationController
   def home
-  end
-
-  def help
-  end
-
-  def contact
+    @movies = Movie.paginate(page: params[:page])
   end
 end

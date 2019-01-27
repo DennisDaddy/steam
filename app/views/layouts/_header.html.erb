@@ -1,7 +1,7 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<div class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <%= link_to "MovieDB", root_path, id: "logo" %>
-    <nav>
+    <div class="nav">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Movies", movies_path %></li>
@@ -24,6 +24,6 @@
           <li><%= link_to "Log in", login_path %></li>
         <% end %>
       </ul>
-    </nav>
+    </div class="nav">
   </div>
-</header>
+</div>
