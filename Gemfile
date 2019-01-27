@@ -13,6 +13,7 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem 'react-rails'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
