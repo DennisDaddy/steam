@@ -10,3 +10,5 @@
     <p><%= truncate(movie.content, length: 50, separator: ''){ link_to 'Read More', movie_path(movie) } %>  
     </p>  
 <% end %>
+
+<%= react_component 'Movies', {movies: @movies} %>
