@@ -1,15 +1,8 @@
+<% provide(:title, 'New Movie') %>
+<% provide(:button_text, 'Create Movie') %>
+
 <h3>Create Movie</h3>
 <hr>
 <div class="container">
-  <%= form_for(@movie) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.label :content %>
-    <%= f.text_field :content %>
-    <p>
-      <%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]}, {:include_blank => "Select One"}%> 
-    </p>
-    <%= f.submit "Create", class: "btn btn-success" %>
-  <% end %>
+  <%= render 'form' %>
 <div>
