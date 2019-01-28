@@ -1,4 +1,5 @@
 <h3>All movies</h3><hr>
+<p align="right"><%= link_to "New movie", new_movie_path, class: "btn btn-primary" %></p>
 <%= will_paginate %>
 <%= react_component 'Movies', {movies: @movies} %>
 <%= will_paginate %>
