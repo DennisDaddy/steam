@@ -5,11 +5,11 @@ feature 'create movie' do
         visit('/movies')
         click_on('New movie')
 
-        fill_in 'movies[title]',	with: 'Adventure one'
-        fill_in 'movies[content]',	with: 'This is amazing'
+        fill_in 'title',	with: 'Adventure one'
+        fill_in 'content',	with: 'This is amazing'
         click_on('submit')
 
-        expect(page).to have_content('Successfully created')  
+        expect(page).to have_title('Adventure one')  
         
     end
 end
